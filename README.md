@@ -11,6 +11,7 @@ The reference integration workspace serves as a single Bazel build environment t
 - Prepare for release validation workflows
 
 
+
 ## Get started
 
 Simply run `./score_starter` and select which integration You want to run. Once running, You will be guided by our welcome cli to run selected examples.
