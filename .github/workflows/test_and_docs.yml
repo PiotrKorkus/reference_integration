@@ -70,7 +70,7 @@ jobs:
       #     python ./scripts/quality_runners.py
       - name: Execute Feature Integration Tests
         run: |
-          bazel test //feature_integration_tests/test_cases:fit
+          bazel test --lockfile_mode=error //feature_integration_tests/test_cases:fit
       - name: DEBUG - List test logs
         run: |
           sudo apt install -y tree
@@ -122,7 +122,7 @@ jobs:
               --github_repo=${{ github.event.repository.name }}
 
           CURRENT=$(realpath .)
-          bazel run //scripts/tooling -- misc html_report --output ${CURRENT}/_build/status_dashboard.html
+          bazel run --lockfile_mode=error //scripts/tooling -- misc html_report --output ${CURRENT}/_build/status_dashboard.html
           tar -cf github-pages.tar _build
       - name: Upload documentation artifact
         uses: actions/upload-artifact@v4.4.0
