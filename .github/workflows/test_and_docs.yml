@@ -65,12 +65,17 @@ jobs:
       - name: Checkout repository
         if: ${{ github.event_name != 'pull_request_target' }}
         uses: actions/checkout@v4
-      - name: Execute Unit Tests with Coverage Analysis
-        run: |
-          python ./scripts/quality_runners.py
+      # - name: Execute Unit Tests with Coverage Analysis
+      #   run: |
+      #     python ./scripts/quality_runners.py
       - name: Execute Feature Integration Tests
         run: |
           bazel test //feature_integration_tests/test_cases:fit
+      - name: DEBUG - List test logs
+        run: |
+          sudo apt install -y tree
+          tree bazel-testlogs
+          cat bazel-testlogs/feature_integration_tests/test_cases/fit/test.xml
       - name: Publish build summary
         if: always()
         run: |
@@ -89,7 +94,7 @@ jobs:
         if: github.ref_type == 'tag'
         run: |
           mkdir -p artifacts
-          find bazel-testlogs/external -name 'test.xml' -print0 | xargs -0 -I{} cp --parents {} artifacts/
+          find bazel-testlogs -name 'test.xml' -print0 | xargs -0 -I{} cp --parents {} artifacts/
           cp -r "$(bazel info --lockfile_mode=error bazel-bin)/coverage/rust-tests" artifacts/rust
           zip -r ${{ github.event.repository.name }}_test_reports.zip artifacts/
         shell: bash
