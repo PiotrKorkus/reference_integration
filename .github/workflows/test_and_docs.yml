@@ -114,9 +114,6 @@ jobs:
         run: |
           bazel --output_base="/home/runner/.cache/bazel/output_base" run \
             --lockfile_mode=error \
-            --repo_contents_cache="/home/runner/.cache/bazel/repo_contents" \
-            --repository_cache="/home/runner/.cache/bazel/repo" \
-            --disk_cache="/home/runner/.cache/bazel/disk" \
               //:docs_combo_experimental -- \
               --github_user=${{ github.repository_owner }} \
               --github_repo=${{ github.event.repository.name }}
