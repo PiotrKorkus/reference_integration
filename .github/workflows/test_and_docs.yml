@@ -112,7 +112,7 @@ jobs:
           cache: false
       - name: Build documentation
         run: |
-          bazel --output_base="/home/runner/.cache/bazel/output_base" run \
+          bazel run \
             --lockfile_mode=error \
               //:docs_combo_experimental -- \
               --github_user=${{ github.repository_owner }} \
