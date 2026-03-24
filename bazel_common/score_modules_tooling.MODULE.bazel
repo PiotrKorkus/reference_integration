@@ -59,7 +59,7 @@ git_override(
 bazel_dep(name = "score_docs_as_code")
 git_override(
     module_name = "score_docs_as_code",
-    commit = "8e5bfe3f6df51f6a35cc8899c3221dd810fc0289",
+    commit = "c40667d6346a2f0b5d586f76f9433426f04495ba",
     remote = "https://github.com/MaximilianSoerenPollak/docs-as-code.git",
 )
 
