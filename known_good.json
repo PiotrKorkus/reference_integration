@@ -138,7 +138,10 @@
             },
             "score_docs_as_code": {
                 "repo": "https://github.com/eclipse-score/docs-as-code.git",
-                "hash": "c1207676afe6cafd25c35d420e73279a799515d8"
+                "hash": "6763560f0940dacce51e5b46b42bf99c4c7fa1a8",
+                "bazel_patches": [
+                    "//patches/docs-as-code:remove-nonexisting-document.patch"
+                ]
             },
             "score_process": {
                 "repo": "https://github.com/eclipse-score/process_description.git",
