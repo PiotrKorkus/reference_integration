@@ -60,7 +60,11 @@ bazel_dep(name = "score_docs_as_code")
 git_override(
     module_name = "score_docs_as_code",
     commit = "b9aedef6c02f6ded6380e53b3ddc525d1427ff69",
-    remote = "https://github.com/MaximilianSoerenPollak/docs-as-code.git",
+    patch_strip = 1,
+    patches = [
+        "//patches/docs-as-code:remove-nonexisting-document.patch",
+    ],
+    remote = "https://github.com/eclipse-score/docs-as-code.git",
 )
 
 bazel_dep(name = "score_process")

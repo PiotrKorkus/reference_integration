@@ -114,7 +114,7 @@ jobs:
         run: |
           bazel run \
             --lockfile_mode=error \
-              //:docs_combo_experimental -- \
+              //:docs_combo -- \
               --github_user=${{ github.repository_owner }} \
               --github_repo=${{ github.event.repository.name }}
 
