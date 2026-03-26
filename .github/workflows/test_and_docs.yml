@@ -71,6 +71,9 @@ jobs:
       - name: Execute Feature Integration Tests
         run: |
           bazel test --lockfile_mode=error //feature_integration_tests/test_cases:fit
+      - name: Execute Docs-As-Code Tests
+        run: |
+          bazel test @score_docs_as_code//src/...
       - name: DEBUG - List test logs
         run: |
           sudo apt install -y tree
