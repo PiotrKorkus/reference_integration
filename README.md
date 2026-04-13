@@ -177,4 +177,4 @@ Use `scripts/generate_rust_analyzer_support.sh` to generate rust_analyzer settin
 Internal tooling scripts are currently under development to provide user single point of interaction with all
 created goods. More detailed readme can be found in scripts: [Tooling README](scripts/tooling/README.md)
 
-xD
+xDD
