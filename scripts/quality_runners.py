@@ -14,6 +14,7 @@ import argparse
 import re
 import select
 import sys
+import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 from pprint import pprint
@@ -260,6 +261,29 @@ def run_command(command: list[str], **kwargs) -> ProcessResult:
     return ProcessResult(stdout="".join(stdout_data), stderr="".join(stderr_data), exit_code=exit_code)
 
 
+def update_lcov() -> ProcessResult:
+    version = "2.0"
+    url = f"https://github.com/linux-test-project/lcov/releases/download/v{version}/lcov-{version}.tar.gz"
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        tarball = Path(tmpdir) / f"lcov-{version}.tar.gz"
+
+        result = run_command(["wget", "-q", "-O", str(tarball), url])
+        if result.exit_code != 0:
+            return result
+
+        result = run_command(["tar", "-xzf", str(tarball), "-C", tmpdir])
+        if result.exit_code != 0:
+            return result
+
+        result = run_command(["sudo", "apt-get", "install", "-y", "libdatetime-perl"])
+        if result.exit_code != 0:
+            return result
+
+        src_dir = Path(tmpdir) / f"lcov-{version}"
+        return run_command(["sudo", "make", "install", "PREFIX=/usr"], cwd=str(src_dir))
+
+
 def parse_arguments() -> argparse.Namespace:
     import argparse
 
@@ -293,6 +317,18 @@ def main() -> bool:
     known = load_known_good(args.known_good_path.resolve())
 
     unit_tests_summary, coverage_summary = {}, {}
+
+    update_result = update_lcov()
+    if update_result.exit_code != 0:
+        print_centered("QR: Failed to update lcov")
+        print(update_result.stderr)
+
+    check_genhtml_version = run_command(["genhtml", "--version"])
+    if check_genhtml_version.exit_code != 0:
+        print_centered("QR: Failed to check genhtml version")
+        print(check_genhtml_version.stderr)
+    else:
+        print_centered(f"QR: genhtml version:\n{check_genhtml_version.stdout}")
 
     if args.modules_to_test:
         print_centered(f"QR: User requested tests only for specified modules: {', '.join(args.modules_to_test)}")
