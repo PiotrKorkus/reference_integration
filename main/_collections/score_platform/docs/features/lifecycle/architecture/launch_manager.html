@@ -645,7 +645,7 @@ The <a class="reference internal" href="../glossary.html#term-Launch-Manager"><s
 </ol>
 <figure class="align-center">
 <p class="plantuml">
-<object data="../../../../../../_images/plantuml-353da1773930da3383eee8927262afc95e36ec1b.svg" type="image/svg+xml" style="width:397px;height:933px;background:#FFFFFF;"></object></p>
+<object data="../../../../../../_images/plantuml-7533afb3377844a58895ccbe6b58319e8f45ca49.svg" type="image/svg+xml" style="width:397px;height:933px;background:#FFFFFF;"></object></p>
 </figure>
 <p>The <a class="reference internal" href="../../../modules/lifecycle/index.html#comp__lifecycle_launch_manager" title="comp__lifecycle_launch_manager"><em class="xref need">Launch Manager (comp__lifecycle_launch_manager)</em></a> implements the following interfaces,for the selection of <a class="reference internal" href="../glossary.html#term-Run-target"><span class="xref std std-term">Run Target</span></a> s, starting and stopping of components and monitoring of the processes.</p>
 <section id="switching-between-run-targets">
@@ -661,7 +661,7 @@ determining which components need to be started or stopped based on their depend
 <p>This interface provides control functionality for activating and managing run targets.It allows users to trigger execution of configured <a class="reference internal" href="../glossary.html#term-Run-target"><span class="xref std std-term">Run targets</span></a> through a standardized activation mechanism.</p>
 <section id="static-architecture">
 <h3>Static architecture<a class="headerlink" href="#static-architecture" title="Link to this heading">#</a></h3>
-<div class="need_container docutils container" id="SNCB-d55f33ad">
+<div class="need_container docutils container" id="SNCB-0765bbbb">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_logic_arc_int table" id="logic_arc_int__lifecycle__controlif">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -708,7 +708,7 @@ determining which components need to be started or stopped based on their depend
 </div>
 </div>
 <p><strong>Operations</strong></p>
-<div class="need_container docutils container" id="SNCB-7a6501d8">
+<div class="need_container docutils container" id="SNCB-e77e3f1c">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_logic_arc_int_op table" id="logic_arc_int_op__lifecycle__activate_target">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -776,7 +776,7 @@ which allows the implementation of a state management applications to support dy
 - Failure with detailed error information if any component failed to transition</p></li>
 </ol>
 <p>This unified approach allows external state managers to request any run target activation without needing to know the current system state, as the <a class="reference internal" href="../glossary.html#term-Launch-Manager"><span class="xref std std-term">Launch Manager</span></a> handles the transition logic internally.</p>
-<div class="need_container docutils container" id="SNCB-03733de7">
+<div class="need_container docutils container" id="SNCB-1e7eb4f2">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_feat_arc_dyn table" id="feat_arc_dyn__lifecycle__control_if_activate">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -805,7 +805,7 @@ which allows the implementation of a state management applications to support dy
 </tr>
 <tr class="content row-odd"><td class="content" colspan="6"><figure class="align-center">
 <p class="plantuml">
-<object data="../../../../../../_images/plantuml-d2a450fc23ce44a9136f3987300655854af6b2d7.svg" type="image/svg+xml" style="width:1396px;height:779px;background:#FFFFFF;"></object></p>
+<object data="../../../../../../_images/plantuml-ebfbeee2932c138f37296fde1685beb443df99c7.svg" type="image/svg+xml" style="width:1396px;height:779px;background:#FFFFFF;"></object></p>
 </figure>
 </td>
 </tr>
@@ -851,7 +851,7 @@ which allows the implementation of a state management applications to support dy
 - Exit code evaluation for failure detection</p>
 <section id="id1">
 <h3>Static architecture<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<div class="need_container docutils container" id="SNCB-ee873eac">
+<div class="need_container docutils container" id="SNCB-ffebb06f">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_logic_arc_int table" id="logic_arc_int__lifecycle__lifecycle_if">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -900,7 +900,7 @@ which allows the implementation of a state management applications to support dy
 </table>
 </div>
 </div>
-<div class="need_container docutils container" id="SNCB-1ce8bd05">
+<div class="need_container docutils container" id="SNCB-e89e2aa9">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_logic_arc_int_op table" id="logic_arc_int_op__lifecycle__run">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -944,7 +944,7 @@ which allows the implementation of a state management applications to support dy
 </table>
 </div>
 </div>
-<div class="need_container docutils container" id="SNCB-0d8ba685">
+<div class="need_container docutils container" id="SNCB-3fd339ba">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_logic_arc_int_op table" id="logic_arc_int_op__lifecycle__terminate">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -1033,7 +1033,7 @@ which allows the implementation of a state management applications to support dy
 </section>
 <section id="id2">
 <h3>Dynamic Architecture<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
-<div class="need_container docutils container" id="SNCB-9ae34df8">
+<div class="need_container docutils container" id="SNCB-12b770b0">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_feat_arc_dyn table" id="feat_arc_dyn__lifecycle__state_machine">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -1062,7 +1062,7 @@ which allows the implementation of a state management applications to support dy
 </tr>
 <tr class="content row-odd"><td class="content" colspan="6"><figure class="align-center">
 <p class="plantuml">
-<object data="../../../../../../_images/plantuml-e648326e9ae05ccc9d01de1c05ef9ccaa93fef1b.svg" type="image/svg+xml" style="width:313px;height:524px;background:#FFFFFF;"></object></p>
+<object data="../../../../../../_images/plantuml-7fac974478a6ebdbceaab0739aee5aa6be4e4c5f.svg" type="image/svg+xml" style="width:313px;height:524px;background:#FFFFFF;"></object></p>
 </figure>
 </td>
 </tr>
@@ -1143,7 +1143,7 @@ It implements core watchdog operations including heartbeat signals to ensure rel
 </ul>
 <section id="id4">
 <h3>Static architecture<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
-<div class="need_container docutils container" id="SNCB-9aa3387c">
+<div class="need_container docutils container" id="SNCB-a567db0e">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_logic_arc_int table" id="logic_arc_int__lifecycle__alive_if">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -1193,7 +1193,7 @@ It implements core watchdog operations including heartbeat signals to ensure rel
 </div>
 </div>
 <p><strong>Operations</strong></p>
-<div class="need_container docutils container" id="SNCB-4781b0a6">
+<div class="need_container docutils container" id="SNCB-faf8dc42">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_logic_arc_int_op table" id="logic_arc_int_op__lifecycle__report_health">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -1239,7 +1239,7 @@ It implements core watchdog operations including heartbeat signals to ensure rel
 </section>
 <section id="id5">
 <h3>Dynamic architecture<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
-<div class="need_container docutils container" id="SNCB-3143b6b9">
+<div class="need_container docutils container" id="SNCB-62f5605b">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_feat_arc_dyn table" id="feat_arc_dyn__lifecycle__alive_monitoring">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -1268,7 +1268,7 @@ It implements core watchdog operations including heartbeat signals to ensure rel
 </tr>
 <tr class="content row-odd"><td class="content" colspan="6"><figure class="align-center">
 <p class="plantuml">
-<object data="../../../../../../_images/plantuml-521f38829ffd83c0d6c99a7ba9cb72628e739850.svg" type="image/svg+xml" style="width:487px;height:478px;background:#FFFFFF;"></object></p>
+<object data="../../../../../../_images/plantuml-384e80bab0ba8345be11d14bdceadf17107b3c29.svg" type="image/svg+xml" style="width:487px;height:478px;background:#FFFFFF;"></object></p>
 </figure>
 </td>
 </tr>
